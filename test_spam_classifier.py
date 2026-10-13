@@ -107,6 +107,6 @@ def test_model_does_not_collapse_to_single_class(trained_model):
     vectorizer, model, _ = trained_model
     spam_like = predict(vectorizer, model, "Free cash prize click now to claim")
     ham_like = predict(vectorizer, model, "See you at class tomorrow morning")
-    assert spam_like != ham_like or (spam_like == 1 and ham_like == 1) is False, (
+    assert spam_like != ham_like, (
         "Model may have collapsed to always predicting the same class"
     )
